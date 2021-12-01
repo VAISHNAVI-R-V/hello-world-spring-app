@@ -1,5 +1,6 @@
 package com.bridgelabz.myspringapp.controller;
 
+import com.bridgelabz.myspringapp.dto.UserName;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -29,5 +30,11 @@ public class HelloRestController {
     public String passPathVariable
             (@PathVariable(name = "name") String name) {
         return "Hello" + name;
+    }
+
+    @GetMapping(value = "/hello3")
+    public String userDTO
+            (@RequestBody UserName userDTO) {
+        return userDTO.toString();
     }
 }
