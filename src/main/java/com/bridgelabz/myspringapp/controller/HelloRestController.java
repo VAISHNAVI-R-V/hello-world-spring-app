@@ -2,6 +2,7 @@ package com.bridgelabz.myspringapp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,5 +20,11 @@ public class HelloRestController {
     @GetMapping(value = "/hello1")
     public String getMethod() {
         return "Hello from bridgelabz";
+    }
+
+    @GetMapping(value = "/hello2")
+    public String passQueryParameter
+            (@RequestParam(name = "key") String key) {
+        return "Hello" + key;
     }
 }
