@@ -29,12 +29,20 @@ public class HelloRestController {
     @GetMapping(value = "/hello2/{name}")
     public String passPathVariable
             (@PathVariable(name = "name") String name) {
-        return "Hello" + name;
+        return "Hello " + name;
     }
 
-    @GetMapping(value = "/hello3")
+    @PostMapping(value = "/hello3")
     public String userDTO
             (@RequestBody UserName userDTO) {
         return userDTO.toString();
     }
+
+    @PutMapping(value = "/hello3/{firstName}")
+    public String postRequestMethod
+            (@PathVariable(name = "firstName") String firstName,
+             @RequestParam(name = "lastName") String lastName) {
+        return "Names  " + firstName + "  " + lastName;
+    }
+
 }
