@@ -3,8 +3,12 @@ package com.bridgelabz.myspringapp.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+/**
+ * @Purpose: To Create A Hello Web Controller to print messages.
+ *
+ * @author : VAISHNAVI R. VISHWAKARMA.
+ * @since  : 1-12-2021.
+ */
 @Controller
 public class HelloWebController {
     @GetMapping("/web")
