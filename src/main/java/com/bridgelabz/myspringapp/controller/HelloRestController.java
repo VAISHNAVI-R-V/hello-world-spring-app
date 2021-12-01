@@ -1,9 +1,6 @@
 package com.bridgelabz.myspringapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : VAISHNAVI R. VISHWAKARMA.
@@ -26,5 +23,11 @@ public class HelloRestController {
     public String passQueryParameter
             (@RequestParam(name = "key") String key) {
         return "Hello" + key;
+    }
+
+    @GetMapping(value = "/hello2/{name}")
+    public String passPathVariable
+            (@PathVariable(name = "name") String name) {
+        return "Hello" + name;
     }
 }
